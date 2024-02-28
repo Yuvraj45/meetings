@@ -74,6 +74,7 @@ public List<*MeetingDTO*> getAllMeetingOfScheduler(String schedulerName) throws 
 list<*Meeting*> meeting=meetingRepo.getMeetingBySchedulerName(schedulerName);
 if(meeting.isEmpty()|| meeting.size()==0 {
   throw new MeetingException("MeetingService.NO.MEETING.FOUND");
+  }
    
 ...
 @Override
