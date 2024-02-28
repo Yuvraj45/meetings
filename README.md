@@ -78,7 +78,7 @@ public class ExceptionControllerAdvice {
   public ResponseEntity<ErrorInfo> MeetingExceptionHandler( MettingException exception)
     ErrorInfo error = new ErrorInfo();
 
-<ExceptionCo</b>
+<b>ExceptionCo</b>
 @ExceptionHandler(Exception.class)
 public Respo`nseEntity<ErrorInfo> exceptionHandler(Exception exception) {
 ..
