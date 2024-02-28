@@ -110,8 +110,13 @@ package com.infy.meeting.utility;
 @Component
 @Aspect
 public class LoggingAspect {
+   public static final log LOGGER = LogFactory.getLog(loggingAspect.class);
 ...
-  @AfterThrowing(pointcut = "executin(* com.infy.meeting.service.*Imp1.*(..))", throwing = "exception")
+  @AfterThrowing(pointcut = "execution(* com.infy.meeting.service.*Imp1.*(..))", throwing = "exception")
+  public void logServiceExecption(Exception execption) throws Exception {
+      LOGGER.error(exception.getMessage(),exception;
+      }
+   }   
   </code></p>
   
 
