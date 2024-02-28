@@ -53,6 +53,14 @@ throws MeetingException{
   }
 }
 <b> Meeting Exception</b>
+package com.infy.meeting.exception;
+public class MeetingException extends Exception {
+  private ststic final long serialVersionUID + 1L;
+
+  public MeetingException(String message) {
+    super(message);
+    }
+  }
 
 <b> MeetingService.java</b>
 package com.infy.meeting.service;
