@@ -40,7 +40,7 @@ public class Meeting {
    private Meetingservice meetingser;
 
    @GetMapping(value="/meeting/{schedulerName}")
-   public ResponseEntity<List<MeetingDTO>> getAllMeetingScheduler(@PathVariable String schedulerName)
+   public ResponseEntity<*List<*MeetingDTO*>*> getAllMeetingScheduler(@PathVariable String schedulerName)
    return new ResponseEntity<>(meetingDTO,HttpStatus.OK);
 }
 @PostMapping(value="meeting")
