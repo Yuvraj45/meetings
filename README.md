@@ -62,7 +62,7 @@ public class MeetingException extends Exception {
     }
   }
 
-<b> MeetingService.java</b>
+<b> MeetingServiceimpl.java</b>
 package com.infy.meeting.service;
 ...
 @Service(value="/meetingService")
@@ -70,7 +70,11 @@ public class MeetingServiceImp1 implements Meetingservice{
   @Autowired
   private MeetingRepository meetingRepo;
 @Override
-public List<MeetingDTO> getAllMeetingOfScheduler(String schedulerName) throws MeetingException {
+public List<*MeetingDTO*> getAllMeetingOfScheduler(String schedulerName) throws MeetingException {
+list<*Meeting*> meeting=meetingRepo.getMeetingBySchedulerName(schedulerName);
+if(meeting.isEmpty()|| meeting.size()==0 {
+  throw new MeetingException("MeetingService.NO.MEETING.FOUND");
+   
 ...
 @Override
 ....
