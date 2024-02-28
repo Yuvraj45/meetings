@@ -118,6 +118,36 @@ public class LoggingAspect {
       LOGGER.error(exception.getMessage(),exception;
       }
    }   
+   <b>Meeting validator---></b>
+   import java.time.localDate;
+   import com.infy.meeting.dto.meetingDTO;
+   import com.infy.meeting.exception.MeetingException;
+   public class MeetingValidator {
+     public staic void validateMeeting(meetingDTO meetingDTO) throws MeetingException {
+       if(! is ValidTeamName(meetingDto.getTeamName())){
+           throw new MeetingException("MeetingValidator.IVALID_TEAM_NAME");
+        }
+        if(! is ValidMeetingdate(meetingDto.getMeetingDate())){
+           throw new MeetingException("MeetingValidator.INVALID_MEETING_DATE");
+          }
+      }
+      Public static boolean isValidTeamName(String teamName){
+      if (teamName.equals("ETAMYSJAVA")||teamName.equals("ETAMYSUI")||teamName.equals("ETAMYSBI")||teamName.equals("ETAMYSMS")
+|| teamName.equals("ETAMYSAI")){
+     return true;
+    }else
+      return false;
+}
+         Public static boolean isValidMeetingDate(LocalDate meetingDate){
+         DayOfWeek dayOfWeek = meetingDate.getDayOfWeek();
+         if(DayOfWeek.SATURDAY.equals(dayOfWeek) || DayOfWeek.SUNDAY.equals(dayOfWeek)){
+            return false;
+            }else
+              return true;
+
+
+      }
+             
   </code></p>
   
 
