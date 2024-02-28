@@ -41,14 +41,18 @@ public class Meeting {
 
    @GetMapping(value="/meeting/{schedulerName}")
    public ResponseEntity<*List<*MeetingDTO*>*> getAllMeetingScheduler(@PathVariable String schedulerName)
+   throws MeetingException{
+   List<MeetingDTO> meetingDTO=meetingser.getAllMeetingOfScheduler(schedulerName);
    return new ResponseEntity<>(meetingDTO,HttpStatus.OK);
 }
 @PostMapping(value="meeting")
-public ResponseEntity<MeetingDTO> schedulerMeeting( @Valid @RequestBody MeetingDTO meetingDTO)
+public ResponseEntity<*MeetingDTO*> schedulerMeeting( @Valid @RequestBody MeetingDTO meetingDTO)
+throws MeetingException{
   MeetingDTO meetingDTO1 =meetingser.scheduleMeeting(meetingDTO);
   return new ResponseEntity<>(meetingDTO1,HttpStatus.CREATED);
   }
 }
+<b> Meeting Exception</b>
 
 <b> MeetingService.java</b>
 package com.infy.meeting.service;
